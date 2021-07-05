@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+.beijing {
+	position:absolute;
+	width:100vw;
+	height:100vh;
+	background: url(images/beijing1.jpg) no-repeat 10px center;
+	background-size: 100% 100%;
+}
+.wenzi {
+	display: block;
+	position:relative;
+	width:30vw;
+	height:18vh;
+	text-decoration:none;
+	transform: scale(1.5);
+}
+.tiaoguo {
+	position: absolute;
+	right:2vw;
+	top:5vh;
+	width:15vw;
+	height:20vh;
+	z-index: 999;
+}
+.tiao {
+	display: block;
+	position:relative;
+	width:10vw;
+	height:15vh;
+	text-decoration:none;
+	transition-delay: 30ms;
+	transform: scale(1.5);
+}
+.tiao:hover{
+	transform: scale(2);
+	color:aliceblue;
+}
+.vid {
+	position:absolute;
+	border:3px solid pink;
+	left:9vw;
+	top:10vh;
+	width:81vw;
+	height:82vh;
+}
+.top {
+	position: relative;
+	top:-5vh;
+	height:10vh;
+	width:80vw;
+}
+.middle{
+	position: relative;
+	top:3vh;
+	left:8vw;
+	border:1px solid white;
+	height:55vh;
+	width:65vw;
+}
+.bottom {
+	position:absolute;
+	width:10vw;
+	height:15vh;
+	right:-3vw;
+	bottom:1vh;
+}
+.fh {
+	display: block;
+	position:relative;
+	width:10vw;
+	height:15vh;
+	text-decoration:none;
+	transition-delay: 30ms;
+	transform: scale(1.5);
+}
+.fh:hover{
+	transform: scale(2);
+	color:aliceblue;
+}

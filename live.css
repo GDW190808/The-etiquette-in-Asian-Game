@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
+.beijing {
+	background-color: cadetblue;
+	width:100vw;
+	height:100vh;
+}
+.qingjing {
+	width:80vw;
+	height:80vh;
+	border:1px solid pink;
+	position:absolute;
+	left:10vw;
+	top:9vh;
+}
+.leftbt {
+	width:20vw;
+	height:60vh;
+	border:1px solid green;
+	position:absolute;
+	left:-2vw;
+	bottom:3vh;
+}
+.rightbt {
+	width:20vw;
+	height:60vh;
+	border:1px solid green;
+	position:absolute;
+	right:-2vw;
+	bottom:3vh;
+}
+.bottom {
+	width:50vw;
+	height:30vh;
+	border:1px solid green;
+	position:absolute;
+	left:15vw;
+	bottom:-3vh;
+}
