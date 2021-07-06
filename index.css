@@ -16,23 +16,23 @@
 .index_go {
 	text-align: center;
 }
-p{
+.yayun{
+	display:bolck;
 	position:absolute;
-	font-size:100px;
 	width: 50vw;
 	margin-left: -14vw;
-	left: 50%;
+	top:20vh;
+	left: 37%;
+	transform: scale(0.7);
 }
 a{
 	position:fixed;
-	font-size:100px;
-	left:43vw;
-	top:65vh;
-	text-decoration:none;
-	color:plum;
+	left:37vw;
+	top:60vh;
+	transform: scale(0.6);
 }
 a:hover {
-	font-size:120px;
 	color:aquamarine;
+	transform: scale(0.7);
 }
 
