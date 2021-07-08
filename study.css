@@ -1,31 +1,60 @@
 @charset "utf-8";
 /* CSS Document */
+*{
+	margin:0;
+	padding:0;
+}
 .stu {
+	position: relative;
 	display:flex;
 	justify-content: center;
-	background-color: #F07679;
-	border:1px solid pink;
-	width:99vw;
-	height:98vh;
+	background: url(images/beijing2.png) no-repeat;
+	background-size: 100% 100%;
+	width:99.7vw;
+	height:99.3vh;
+}
+.biaoti {
+	position:absolute;
+	left:2vw;
+	margin:3vw;
+    width: 35vw;
+	height:20vh;
+	transform: rotate(-15deg);
+	transition-delay: 30ms;
+}
+.biaoti:hover {
+	transform:  rotate(15deg);
 }
 .tu1 {
-	margin:20px;
-	margin-top:20vh;
-	border:1px solid lightblue;
-	width:25vw;
-	height:60vh;
+	margin:5vh;
+	margin-top:25vh;
+	width:20vw;
+	height:65vh;
+	transform: scale(1);
+	transition-delay: 30ms;
 }
 .tu2 {
-    margin:20px;
-	margin-top:20vh;
-	border:1px solid lightblue;
-	width:25vw;
-	height:60vh;
+    margin:5vh;
+	margin-top:25vh;
+	width:20vw;
+	height:65vh;
+	transform: scale(1);
+	transition-delay: 30ms;
 }
 .tu3 {
-    margin:20px;
-	margin-top:20vh;
-	border:1px solid lightblue;
-	width:25vw;
-	height:60vh;
+    margin:5vh;
+	margin-top:25vh;
+	width:20vw;
+	height:65vh;
+	transform: scale(1);
+	transition-delay: 30ms;
+}
+.tu1:hover {
+	transform: scale(1.2);
+}
+.tu2:hover {
+	transform: scale(1.2);
+}
+.tu3:hover {
+	transform: scale(1.2);
 }

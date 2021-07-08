@@ -1,0 +1,255 @@
+<!-- Button trigger modal -->
+ <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>
+    答题吧
+</title>
+<link href="check.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="cbt">
+         <img src="images/xiaoceshi.png"  width="100%" height="100%">
+    </div>
+    <div class="form-c">
+        <div class="qa">
+            <div class="q">
+                <h3 class="q-item"></h3>
+            </div>
+            <div class="a">
+                <div class="a-item start-game">开始答题</div>
+                <!-- 			<div class="a-item">E36 M3</div>
+                <div class="a-item">E92 M3</div>
+                <div class="a-item">G80 M3</div>
+                <div class="a-item">F80 M3</div> -->
+            </div>
+        </div>
+        <div class="progressBar">
+            <div class="bar">
+                <div class="bar-w"></div>
+            </div>
+            <div class="next">下一题</div>
+        </div>
+    </div>
+    <div class="fh">
+        <a href="study.html"><img src="images/fanhui.png" width="100%" height="100%"></a>
+    </div>
+    <div class="finish">
+        <a href="#"><img src="images/wancheng.png" width="100%" height="100%"></a>
+    </div>
+    <script>
+        const qa = [
+        {
+            question: "遇到外国人问路，你会",
+            correct: "热情帮助",
+            incorrect: ["与我无关", "无视他", "迅速跑远", "掉头走远"]
+        },
+        {
+            question: "观看比赛时，什么行为是不对的",
+            correct: "大吵大叫",
+            incorrect: ["按标志入座", "不乱扔垃圾", "规范的为队伍加油", "排队进出场馆"]
+        },
+        {
+            question: "下面哪个是不文明的",
+            correct: "光着膀子在街上",
+            incorrect: ["面部干净整洁", "行走不急不慢", "不随地乱坐", "衣着干净"]
+        },
+        {
+            question: "在公共场所穿衣礼仪上，正确的是",
+            correct: "小明穿着干净的运动服和运动鞋",
+            incorrect: ["小高穿着拖鞋脚上还有沙子", "小溪把外套随意帮在脖子上", "小可穿着带油渍的衣服", "小赵穿着划破的裤子"]
+        },
+        {
+            question: "遇到和我们外貌差别很大的外国人，我们应该",
+            correct: "保持尊重",
+            incorrect: ["对他们指手画脚", "悄悄议论", "看来看去", "躲起来"]
+        }
+    ];
+    const answerContainer = document.querySelector(".a");
+    const questionCon = document.querySelector(".q");
+    const question = document.querySelector(".q-item");
+    const bar = document.querySelector(".bar");
+    const barContainer = document.querySelector(".progressBar");
+    const progressBar = document.querySelector(".bar-w");
+    const next = document.querySelector(".next");
+    const startBtn = document.querySelector(".start-game");
+    const questions = [];
+    const player = { score: 0, answers: [] };
+    let cur = 0;
+    const holder = [];
+    (() => {
+        loadQuestions(); // load questions immediately
+    })();
+    
+    function loadQuestions() {
+        qa.forEach((e) => {
+            // loop through "qa"
+            let temp = [];
+            e.incorrect.forEach((ans) => {
+                // loop through 'qa.incorrect' => place false on incorrect items
+                let obj = {
+                    response: ans,
+                    correct: false
+                };
+                temp.push(obj);
+            });
+    
+            let obj = {
+                // place true on correct items
+                response: e.correct,
+                correct: true
+            };
+            temp.push(obj);
+            let mainTemp = {
+                question: e.question,
+                options: temp, // both correct and incorrect options are stored here
+                correct: e.correct // correct answer
+            };
+            questions.push(mainTemp); // push into global
+        });
+    }
+    function newQuestion() {
+        if (cur >= questions.length) {
+            next.innerHTML = "查看成绩";
+            results();
+        } else {
+            next.innerHTML = "下一题";
+        }
+        answerContainer.innerHTML = "";
+        const el = questions[cur];
+        progess();
+        console.log(el);
+        el.options.sort(() => {
+            return 0.5 - Math.random();
+        });
+    
+        const capQuestion = el.question.charAt(0).toUpperCase() + el.question.slice(1);
+        question.textContent = `${capQuestion}?`;
+        answerContainer.innerHTML = "";
+    
+        el.options.forEach((option) => {
+            const divOption = document.createElement("div");
+            holder.push(divOption);
+            divOption.correctAnswer = el.correct;
+            divOption.que = capQuestion;
+            divOption.isITcorrect = option.correct;
+            divOption.classList.add("a-item");
+            divOption.textContent = option.response;
+            answerContainer.append(divOption);
+    
+            divOption.addEventListener("click", optSelect);
+        });
+    }
+    
+    // if selected option is T || F
+    function optSelect(e) {
+        endTurn();
+        if (e.target.isITcorrect) {
+            player.score++;
+            let obj = {
+                que: e.target.que,
+                res: e.target.textContent,
+                correct: true,
+                qNum: cur
+            };
+            player.answers.unshift(obj);
+            e.target.style.color = "#008205";
+            e.target.style.backgroundColor = "#dbfff3";
+        } else {
+            let obj = {
+                que: e.target.que,
+                res: e.target.textContent,
+                correct: false,
+                qNum: cur
+            };
+            player.answers.unshift(obj);
+            e.target.style.color = "#e91e63";
+            e.target.style.backgroundColor = "#ffd3e2";
+        }
+        e.target.style.cursor = "pointer";
+        // player.answers.push(temp);
+    }
+    
+    // OPTIONS not selected have a unique style
+    
+    function endTurn() {
+        holder.forEach((el) => {
+            el.removeEventListener("click", optSelect);
+            el.style.backgroundColor = "#ffffff05";
+            el.style.color = "#565656";
+            el.style.cursor = "default";
+        });
+        cur++;
+        if (cur >= questions.length) {
+            next.innerHTML = "查看成绩";
+        } else {
+            next.innerHTML = "下一题";
+        }
+    }
+    
+    function progess() {
+        bar.style.width = "60%";
+        next.classList.add("progressActive");
+        question.style.display = "block";
+    
+        const currentQ = cur + 1;
+        const progressIs = (currentQ / questions.length) * 100;
+    
+        if (progressIs === 100) {
+            next.innerHTML = "查看成绩";
+            progressBar.style.maxWidth = "100%";
+        }
+        progressBar.style.width = `${progressIs}%`;
+    }
+    startBtn.addEventListener("click", newQuestion);
+    next.addEventListener("click", () => {
+        if (cur >= questions.length) {
+            results();
+        } else {
+            newQuestion();
+        }
+    });
+    
+    // update score while answering each Q
+    
+    function results() {
+        console.log(player.score);
+        question.style.display = "block";
+        answerContainer.innerHTML = "";
+        question.textContent = `快看看你的答题情况`;
+        player.answers.forEach((ans, i) => {
+            const resultsMockup = `
+            <div class="result">
+            <div class="result-q"><span>${ans.qNum}</span> ${ans.que}</div>
+            <div>${ans.res}</div>
+            <div>${ans.correct}</div>
+            </div>`;
+            answerContainer.insertAdjacentHTML("afterbegin", resultsMockup);
+        });
+        const progressIs = (player.score / questions.length) * 100;
+        next.innerHTML = `${player.score} / ${questions.length} 题`;
+    
+        if (progressIs <= 50) {
+            bar.style.backgroundColor = `#ff8585`;
+            progressBar.style.backgroundColor = `red`;
+        } else if (progressIs <= 75) {
+            bar.style.backgroundColor = `#ffc582`;
+            progressBar.style.backgroundColor = `#ff8900`;
+        } else {
+            progressBar.style.backgroundColor = `#00d15e`;
+            bar.style.backgroundColor = `#bcffda`;
+        }
+    
+        progressBar.style.width = `${progressIs}%`;
+    
+        
+    }
+    function restartGame() {
+        newQuestion();
+    }
+    
+    </script>
+</body>
+</html>

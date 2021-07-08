@@ -38,11 +38,9 @@
 }
 .tiao:hover{
 	transform: scale(2);
-	color:aliceblue;
 }
 .vid {
 	position:absolute;
-	border:3px solid pink;
 	left:9vw;
 	top:10vh;
 	width:81vw;
@@ -58,7 +56,6 @@
 	position: relative;
 	top:3vh;
 	left:8vw;
-	border:1px solid white;
 	height:55vh;
 	width:65vw;
 }
@@ -80,5 +77,4 @@
 }
 .fh:hover{
 	transform: scale(2);
-	color:aliceblue;
 }

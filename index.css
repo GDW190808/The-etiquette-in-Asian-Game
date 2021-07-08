@@ -25,6 +25,9 @@
 	left: 37%;
 	transform: scale(0.7);
 }
+.yayun:hover {
+	transform:scale(0.8);
+}
 a{
 	position:fixed;
 	left:37vw;
