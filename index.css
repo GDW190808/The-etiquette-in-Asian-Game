@@ -7,7 +7,7 @@
 	position:absolute;
 	width:100vw;
 	height:100vh;
-	background: url(images/beijing.jpg) no-repeat 10px center;
+	background: url(images/beijing.jpg) no-repeat center;
 	background-size: 100% 100%;
 }
 .index_title {
@@ -19,8 +19,9 @@
 .yayun{
 	display:bolck;
 	position:absolute;
-	width: 50vw;
-	margin-left: -14vw;
+	width: 60vw;
+	height:60vh;
+	margin-left: -18vw;
 	top:20vh;
 	left: 37%;
 	transform: scale(0.7);
@@ -29,13 +30,13 @@
 	transform:scale(0.8);
 }
 a{
-	position:fixed;
-	left:37vw;
-	top:60vh;
-	transform: scale(0.6);
+	position:absolute;
+	left:42vw;
+	top:70vh;
+	transform: scale(0.9);
 }
 a:hover {
 	color:aquamarine;
-	transform: scale(0.7);
+	transform: scale(1.1);
 }
 

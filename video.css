@@ -8,7 +8,7 @@
 	position:absolute;
 	width:100vw;
 	height:100vh;
-	background: url(images/beijing1.jpg) no-repeat 10px center;
+	background: url(images/beijing2.png) no-repeat 10px center;
 	background-size: 100% 100%;
 }
 .wenzi {
@@ -21,9 +21,9 @@
 }
 .tiaoguo {
 	position: absolute;
-	right:2vw;
-	top:5vh;
-	width:15vw;
+	right:1vw;
+	bottom:5vh;
+	width:20vw;
 	height:20vh;
 	z-index: 999;
 }
@@ -31,10 +31,13 @@
 	display: block;
 	position:relative;
 	width:10vw;
-	height:15vh;
+	height:20vh;
 	text-decoration:none;
 	transition-delay: 30ms;
 	transform: scale(1.5);
+	animation-name:tg;
+	animation-duration:2s;
+	animation-iteration-count: infinite;
 }
 .tiao:hover{
 	transform: scale(2);
@@ -54,7 +57,7 @@
 }
 .middle{
 	position: relative;
-	top:3vh;
+	top:7vh;
 	left:8vw;
 	height:55vh;
 	width:65vw;
@@ -63,18 +66,42 @@
 	position:absolute;
 	width:10vw;
 	height:15vh;
-	right:-3vw;
-	bottom:1vh;
+	left:1vw;
+	bottom:3vh;
 }
 .fh {
 	display: block;
 	position:relative;
 	width:10vw;
-	height:15vh;
+	height:20vh;
 	text-decoration:none;
 	transition-delay: 30ms;
 	transform: scale(1.5);
+	animation-name:fh;
+	animation-duration:2s;
+	animation-iteration-count: infinite;
 }
 .fh:hover{
 	transform: scale(2);
 }
+
+@-webkit-keyframes tg {
+	0%{-webkit-transform: rotate(-15deg);}
+	
+	50%{-webkit-transform: rotate(15deg);}
+	
+	100%{-webkit-transform: rotate(-15deg);}
+	
+}
+@-webkit-keyframes fh {
+	0%{-webkit-transform: rotate(15deg);}
+	
+	50%{-webkit-transform: rotate(-15deg);}
+	
+	100%{-webkit-transform: rotate(15deg);}
+	
+}
+
+
+
+

@@ -2,6 +2,11 @@
 	margin:0;
 	padding:0;
 }
+@font-face {
+	
+	font-family: "keai";
+	src: url(font/汉仪乐喵体简.TTF);
+}
 body {
 	display: flex;
 	align-items: center;
@@ -25,12 +30,24 @@ body {
 .cbt:hover {
     transform:  rotate(15deg);
 }
+.xbj {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 600px;
+	width: 550px;
+	background:url(images/lian.png) no-repeat;
+	background-size: 100% 100%;
+	font-family: monospace;
+	margin: 0;
+}
 .form-c {
-	height: 500px;
-	width: 400px;
+	height: 570px;
+	width: 500px;
 	padding: 15px;
 	border-radius: 12px;
 	background-color: #f1ffa1;
+	opacity: 0.9;
 	position: relative;
 }
 .progressBar {
@@ -66,7 +83,9 @@ body {
 	transform: translateX(100px);
 	width: 0;
 	margin-left: auto;
-	color: #cdcdcd;
+	font-size: 20px;
+	font-family:"keai";
+	color: #000000;
 	cursor: pointer;
 }
 	.next:hover {
@@ -78,9 +97,9 @@ body {
 	flex-direction: column;
 }
 .q h3 {
-		margin: 1.2em 0;
-
-		font-size: 1.4em;
+		margin: 0.5em 0;
+	    font-family:"keai";
+		font-size: 2em;
 		color: #414141;
 	}
 .a {
@@ -88,10 +107,12 @@ body {
 	flex-direction: column;
 }
 	.a-item {
-		padding: 18px 10px;
-		background-color: #a4f4ff;
+		padding: 15px 10px;
+		background-color: #bfedff;
 		border-radius: 5px;
-		color: #777777;
+		font-family:"keai";
+		font-size: larger;
+		color: #3b3b3b;
 		margin: 0.35em 0;
 	}
 		.a-item:hover {
@@ -109,14 +130,17 @@ body {
 }
 .start-game {
 	background-color: #dddddd !important;
+	font-family:"keai";
 	color: #1c1c1c !important;
-	font-size: 1em;
+	font-size: 2em;
 }
 .result {
 	display: flex;
 	padding: 20px 0px;
 	justify-content: space-between;
 	border-bottom: 1px solid #333;
+	font-family:"keai";
+	font-size: larger;
 	color: #2c2c2c;
 	align-items: center;
 	flex-wrap: wrap;

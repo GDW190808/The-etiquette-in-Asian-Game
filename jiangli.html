@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奖状</title>
+    <link href="jiangli.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="jieshao">
+            &nbsp&nbsp&nbsp亲爱的小朋友，恭喜你完成了亚运礼仪的学习和测试！<br>&nbsp&nbsp那优秀的小朋友请在下面打出你的名字，去领取奖杯吧！  
+        </div>
+        <div class="mid">
+          姓名： <input type="text" id="xm">
+        </div>
+            <button class="xunzhang" title="点击提交"></button>
+    </div>
+    <div class="fan">
+        <a href="study.html"><img src="images/fanhui1.png" width="100%" height="100%"></a>
+    </div>
+    <div id="jiang">
+        <div id="a">
+            <p id="aa">&nbsp&nbsp&nbsp&nbsp恭喜</p>
+            <p id="aa1"></p>
+        </div>
+    </div>
+    <a href="index.html">
+        <div class="fh"></div>
+    </a>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+       
+    //    xz.addEventListener("click", () => {
+    //     if (name==NULL) {
+    //         alert("你的名字还没填哦！");
+    //     } else {
+    //         alert(name);
+    //     }
+    // });
+    $('.xunzhang').click(function (e) { 
+        
+            $('#jiang').css("z-index",99);
+            $('#jiang').css("opacity",0.9); 
+            $('#aa1').text($('#xm').val()+"成为知识达人！");
+            $('.fh').css("z-index",100);
+            $('.fh').css("opacity",1);
+       
+    });
+    </script>
+</body>
+</html>

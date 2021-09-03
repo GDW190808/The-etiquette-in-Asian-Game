@@ -13,31 +13,34 @@
     <div class="cbt">
          <img src="images/xiaoceshi.png"  width="100%" height="100%">
     </div>
-    <div class="form-c">
-        <div class="qa">
-            <div class="q">
-                <h3 class="q-item"></h3>
+    <div class="xbj">
+        <div class="form-c">
+            <div class="qa">
+                <div class="q">
+                    <h3 class="q-item"></h3>
+                </div>
+                <div class="a">
+                    <div class="a-item start-game">开始答题</div>
+                    <!-- 			<div class="a-item">E36 M3</div>
+                    <div class="a-item">E92 M3</div>
+                    <div class="a-item">G80 M3</div>
+                    <div class="a-item">F80 M3</div> -->
+                </div>
             </div>
-            <div class="a">
-                <div class="a-item start-game">开始答题</div>
-                <!-- 			<div class="a-item">E36 M3</div>
-                <div class="a-item">E92 M3</div>
-                <div class="a-item">G80 M3</div>
-                <div class="a-item">F80 M3</div> -->
+            <div class="progressBar">
+                <div class="bar">
+                    <div class="bar-w"></div>
+                </div>
+                <div class="next">下一题</div>
             </div>
-        </div>
-        <div class="progressBar">
-            <div class="bar">
-                <div class="bar-w"></div>
-            </div>
-            <div class="next">下一题</div>
         </div>
     </div>
+    
     <div class="fh">
-        <a href="study.html"><img src="images/fanhui.png" width="100%" height="100%"></a>
+        <a href="study.html"><img src="images/fanhui1.png" width="100%" height="100%"></a>
     </div>
     <div class="finish">
-        <a href="#"><img src="images/wancheng.png" width="100%" height="100%"></a>
+        <a href="jiangli.html"><img src="images/wancheng.png" width="100%" height="100%"></a>
     </div>
     <script>
         const qa = [
@@ -151,7 +154,7 @@
             let obj = {
                 que: e.target.que,
                 res: e.target.textContent,
-                correct: true,
+                correct: "√",
                 qNum: cur
             };
             player.answers.unshift(obj);
@@ -161,7 +164,7 @@
             let obj = {
                 que: e.target.que,
                 res: e.target.textContent,
-                correct: false,
+                correct: "×",
                 qNum: cur
             };
             player.answers.unshift(obj);
@@ -218,7 +221,7 @@
         console.log(player.score);
         question.style.display = "block";
         answerContainer.innerHTML = "";
-        question.textContent = `快看看你的答题情况`;
+        question.textContent = `你的得分: ${player.score*20}`;
         player.answers.forEach((ans, i) => {
             const resultsMockup = `
             <div class="result">
@@ -229,11 +232,13 @@
             answerContainer.insertAdjacentHTML("afterbegin", resultsMockup);
         });
         const progressIs = (player.score / questions.length) * 100;
-        next.innerHTML = `${player.score} / ${questions.length} 题`;
+      /*  next.innerHTML = `${player.score} / ${questions.length} 题`;*/
+        next.innerHTML='查看正确答案';
     
         if (progressIs <= 50) {
             bar.style.backgroundColor = `#ff8585`;
             progressBar.style.backgroundColor = `red`;
+            
         } else if (progressIs <= 75) {
             bar.style.backgroundColor = `#ffc582`;
             progressBar.style.backgroundColor = `#ff8900`;
@@ -243,13 +248,29 @@
         }
     
         progressBar.style.width = `${progressIs}%`;
-    
-        
+        next.addEventListener("click", () => {
+        answer();
+        });
+       
     }
     function restartGame() {
         newQuestion();
     }
-    
+    function answer(){
+        question.style.display = "block";
+        answerContainer.innerHTML = "";
+        question.textContent = `正确答案`;
+        qa.forEach((qa) => {
+            const resultsMockup = `
+            <div class="result">
+            <div class="result-q">${qa.question}</div>
+            <div>${qa.correct}</div>
+            </div>`;
+            answerContainer.insertAdjacentHTML("afterbegin", resultsMockup);
+        });
+        next.innerHTML='';
+        
+    }
     </script>
 </body>
 </html>
