@@ -20,10 +20,10 @@
 .title_cj{
 	height: 10vh;
 	width: 10vw;
-	padding:6px;
+	padding-top: 2vh;
 	border: 1px solid gray;
 	text-align:center;
-	line-height:center;
+	ling-height:center;
 	font-size:25px;
 	font-weight: 900;
 	font-family:"keai";
@@ -62,7 +62,7 @@
 .title_dhk{
 	height: 10vh;
 	width: 10vw;
-	padding:7px;
+	padding-top: 2vh;
 	border: 1px solid gray;
 	position: absolute;
 	top: 60vh;
@@ -127,37 +127,39 @@
 .option{
 	height: 8vh;
 	width: 26vw;
+/*	border: 1px solid red;*/
 	position: relative;
 	float: left;
 	left: 10vw;
 	top: 65vh;
 	text-align:center;
-	line-height:center;
+	ling-height:center;
 	font-weight: 900;
 	color: aliceblue;
 	z-index: 9;
 	font-size: 20px;
 	font-family:"keai";
 	border-radius: 25px;
-	background-color:#7eb5ce;
+	background-color:#5A68EB;
 	box-shadow: 10px 10px 5px #888888;
 }
 .option:hover{
 	height: 8.5vh;
 	width: 26vw;
+/*	border: 1px solid red;*/
 	position: relative;
 	float: left;
 	left: 10vw;
 	top: 65vh;
 	text-align:center;
-	line-height:center;
+	ling-height:center;
 	font-weight: 900;
 	color: aliceblue;
 	z-index: 9;
 	font-size: 22px;
 	font-family:"keai";
 	border-radius: 25px;
-	background-color:#89c0d6;
+	background-color:#3E4EED;
 	box-shadow: 10px 10px 5px #888888;
 }
 

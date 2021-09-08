@@ -19,6 +19,7 @@
 .title_cj{
 	height: 10vh;
 	width: 10vw;
+	padding-top: 2vh;
 	border: 1px solid gray;
 	text-align:center;
 	ling-height:center;
@@ -45,6 +46,9 @@
 .text_dhk{
 	height: 30vh;
 	width: 100vw;
+	padding-top: 1vh;
+	padding-left: 1vw;
+	padding-right: 3vw;
 	border: 1px solid gray;
 	position: absolute;
 	top: 70vh;
@@ -60,6 +64,7 @@
 .title_dhk{
 	height: 10vh;
 	width: 10vw;
+	padding-top: 2vh;
 	border: 1px solid gray;
 	position: absolute;
 	top: 60vh;
@@ -124,7 +129,7 @@
 .option{
 	height: 8vh;
 	width: 26vw;
-	border: 1px solid red;
+/*	border: 1px solid red;*/
 	position: relative;
 	float: left;
 	left: 10vw;
@@ -143,7 +148,7 @@
 .option:hover{
 	height: 8.5vh;
 	width: 26vw;
-	border: 1px solid red;
+/*	border: 1px solid red;*/
 	position: relative;
 	float: left;
 	left: 10vw;
